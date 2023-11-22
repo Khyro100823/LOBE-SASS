@@ -1,0 +1,178 @@
+.header{
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        padding-top: 1rem;
+
+        .branding{
+            img{
+                width: 120px;
+            }
+        }
+
+        .btn__dl{
+            display: none;
+        }
+
+        .header__nav{
+            position: absolute;
+            width: 100%;
+            height: 0;
+            right: 0rem;
+            top: 8.5rem;
+            transition: 0.5s ease;
+            overflow: hidden;
+            background: $clr-light;
+            border-top: 1px solid transparent;
+            ul{
+                padding-top: 5rem;
+                padding-left: 3rem;
+                .btn{
+                    width: 95%;
+                    text-align: center;
+                    font-size: 2rem;
+                    margin-top: 3rem;
+                    transition: transform ease 1s;
+                }
+
+                .btn:hover{
+                    transform: scale(1.07);
+                }
+                li{
+                    margin-bottom: 4rem;
+                    a{
+                        font-weight: 600;
+                        color: $clr-gray;
+                        font-size: 2rem;
+                        transition: 0.25s ease;
+                    }
+                }
+
+                li:hover{
+                    a{
+                        color: $clr-dark;
+                        transition: 0.25s ease;
+                    }
+                }
+            }
+        }
+
+        .header__nav.open{
+            height: 85vh;
+            transition: 0.5s ease;
+            border-top: 1px solid $clr-gray;
+            }
+
+        .burger__btn{
+            background: lightgray;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 50%;
+            span{
+                width: 2.5rem;
+                height: 0.35rem;
+                background-color: $clr-gray;
+                border-radius: 5rem;
+                display: block;
+                &:nth-child(2) {
+                    margin: 0.25rem 0;
+                  }
+            }
+        }
+
+        .burger__btn.open{
+            span{
+              transition: 0.5s ease;
+            }
+            span:first-child{
+              transition: 0.5s ease;
+              transform: translate(0px,8px) rotate(45deg);
+            }
+            span:nth-child(2){
+              transition:0.5s ease;
+              display: none;
+            }
+            span:last-child{
+              transform: translate(0, 5px) rotate(-45deg);
+              transition:0.5s ease;
+            }
+          }
+        }
+
+
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            .btn__dl{
+                display: unset;
+                transition: transform ease 1s;
+                }
+
+            .btn__dl:hover{
+                transform: scale(1);
+            }
+
+            .header__nav{
+                display: flex;
+                position: unset;
+                justify-content: space-around;
+                height: unset;
+                background: unset;
+                align-items: center;
+                ul{
+                    display: flex;
+                    gap: 4rem;
+                    padding-top: 1rem;
+                    .btn{
+                        display: none;
+                    }
+                }
+            }
+            .burger__btn{
+                display: none;
+            }
+           
+        }
+    }
+}
+
+
+
+
+.train {
+    padding-top:5rem ;
+    &__wrapper{
+    text-align: center;
+    border-bottom: 1px solid $clr-gray;
+    padding-bottom: 10rem;
+        h2{
+            font-size: 4.5rem;
+            color: $clr-dark;
+            font-weight: 600;
+            max-width: 40rem;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 6rem;
+            margin-bottom: 5rem;
+        }
+        a{
+            width: 35%;
+            font-weight: 600;
+            transition: transform ease 1s;
+        }
+        a:hover{
+            transform: scale(1.07);
+        }
+    }
+   
+   @include mediaQuery($break-lg){
+    &__wrapper{
+        a{
+            width: 12%;
+        }
+    }
+   }
+}
+
+

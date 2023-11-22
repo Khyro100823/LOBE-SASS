@@ -1,0 +1,108 @@
+.footer{
+    &__wrapper{
+        .footer__copyright{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            h1{
+                line-height: 3rem;
+            }
+        }
+
+        .footer__item{
+        display: grid;
+        grid-template-columns: 1fr;
+        
+            .footer__links{
+                h4{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 3.5rem;
+                    font-weight: 600;
+                }
+                ul{
+                    max-height: 0rem;
+                    padding: 0 2rem;
+                    overflow: hidden;
+                    transition: 0.5s ease;
+                    li{
+                        padding-bottom: 4rem;
+                        text-align: center;
+                    }
+                }
+                ul.open{
+                    max-height: 50rem;
+                    transition: 0.5s ease;
+                }
+
+                i{
+                    display: unset;
+                    transition: 0.5s ease;
+                }
+                i.open{
+                    transform: rotate(180deg);
+                    transition: 0.5s ease;
+                }
+            }
+        }
+
+        .footer__icons{
+            padding-top: 2rem;
+            margin: 0 auto;
+            gap: 3rem;
+        ul{
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            li{
+                background: $clr-green;
+                padding: 0.5rem 1rem;
+                border-radius: 5rem;
+                transition: 0.5s ease;
+                display: flex;
+                a{
+                    i{
+                        color: $clr-light
+                    }
+                }
+                &:hover{
+                    scale: 1.1;
+                    transition: 0.5s ease;
+                }
+            }
+        }
+        }
+    }
+    
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-gap: 3rem;
+            .footer__item{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                text-align: center;
+                .footer__links{
+                    h4{
+                        display: unset;
+                        text-align: center;
+                    }
+                    ul{
+                        
+                        max-height: unset;
+                        li{
+                            margin-top: 3rem;
+                            padding-bottom: unset;
+                        }
+                    }
+                    i{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

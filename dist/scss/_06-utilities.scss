@@ -1,0 +1,11 @@
+.btn{
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    border: 1px solid transparent;
+    color: $clr-light;
+    border-radius: 5rem;
+    &.bg--green{
+       background: $clr-green;
+       border: 1px solid $clr-light;
+    }
+}
